@@ -191,7 +191,7 @@ function App() {
           {/* My Tech Stack + GitHub Stats */}
           <div className="flex-1 flex flex-col items-center space-y-3">
             {/* My Tech Stack Section */}
-            <div className="p-4 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full max-w-[300px]">
+            <div className="p-4 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full ">
               <h2 className="text-lg font-semibold text-center text-[#2d3748]">
                 My Tech Stack
               </h2>
@@ -225,7 +225,7 @@ function App() {
             </div>
 
             {/* GitHub Stats Section */}
-            <div className="bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full max-w-[300px]">
+            <div className="bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full ">
               <img
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=zrlsena"
                 alt="GitHub Stats"
