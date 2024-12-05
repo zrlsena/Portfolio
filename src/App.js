@@ -6,6 +6,8 @@ import {
   FaReact,
   FaGithub,
   FaLinkedin,
+  FaNodeJs,
+  FaDatabase,
 } from "react-icons/fa"; // FontAwesome ikonları
 import { SiTailwindcss, SiTypescript } from "react-icons/si"; // Special ikonlar
 
@@ -88,7 +90,7 @@ function App() {
         <div className="space-y-10">
           {/* Work Experience */}
           <div>
-            <h2 className="text-2xl mb-4  font-semibold text-[#2d3748]">
+            <h2 className="text-2xl mb-4 font-semibold text-[#2d3748] mt-0">
               Work Experience
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -97,119 +99,139 @@ function App() {
                 <div className="relative mb-4 w-full h-40">
                   <img
                     src="./intern.png"
-                    alt="Profile"
+                    alt="Shopney"
                     className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
                   />
                 </div>
-
-                {/* Başlık */}
-                <h3 className="text-xl font-semibold text-black ml-3 text-left mt-4">
+                <h3 className="text-xl font-semibold text-black px-3 text-left mt-2">
                   Shopney
                 </h3>
-
-                {/* Açıklama */}
-                <p className="text-gray-500 text-left ml-3">
+                <p className="text-gray-500 text-left px-3 py-1">
                   Intern Front-end developer
                 </p>
-                <div className="flex justify-center space-x-4 mt-3">
-                  <div className="text-sm mb-3 border-2 border-gray text-black px-3 py-2 rounded-full">
+                <div className="flex justify-center space-x-4 m-1 ">
+                  <div className="text-sm mb-3 border-2 border-gray text-black px-2 py-2 rounded-full">
                     JavaScript
                   </div>
-                  <div className="text-sm ml-2 mb-3 border-2 border-gray text-black px-3 py-2 rounded-full">
+                  <div className="text-sm mb-3 border-2 border-gray text-black px-2 py-2 rounded-full">
                     React
                   </div>
-                  <div className="text-sm mr-4 mb-3 border-2 border-gray text-black px-3 py-2 rounded-full">
+                  <div className="text-sm mb-3 border-2 border-gray text-black px-2 py-2 rounded-full">
                     Bootstrap
                   </div>
                 </div>
               </div>
 
               <div className="p-0 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300">
-                {/* Resim Kısmı */}
                 <div className="relative mb-4 w-full h-40">
                   <img
                     src="./nano.png"
-                    alt="Profile"
+                    alt="nanoWiss"
                     className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
                   />
                 </div>
-
-                {/* Başlık */}
-                <h3 className="text-xl font-semibold text-black ml-3 text-left mt-4">
+                <h3 className="text-xl font-semibold text-black px-3 text-left mt-2">
                   nanoWiss
                 </h3>
-
-                {/* Açıklama */}
-                <p className="text-gray-500 text-left ml-3">Web developer</p>
-                <div className="flex justify-center space-x-4 mt-3">
-                  <div className="text-sm mb-3 border-2 border-gray text-black px-3 py-2 rounded-full">
+                <p className="text-gray-500 text-left px-3 py-1">
+                  Web developer
+                </p>
+                <div className="flex justify-center space-x-4 m-1">
+                  <div className="text-sm mb-3 border-2 border-gray text-black px-2 py-2 rounded-full">
                     JavaScript
                   </div>
-                  <div className="text-sm ml-2 mb-3 border-2 border-gray text-black px-3 py-2 rounded-full">
+                  <div className="text-sm mb-3 border-2 border-gray text-black px-2 py-2 rounded-full">
                     React
                   </div>
-                  <div className="text-sm mr-4 mb-3 border-2 border-gray text-black px-3 py-2 rounded-full">
+                  <div className="text-sm mb-3 border-2 border-gray text-black px-2 py-2 rounded-full">
                     Bootstrap
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          
         </div>
 
         {/* Sağ Kısım: Project ve My Tech Stack */}
-        <div className="space-y-10 ml-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Project */}
-            
-
-            {/* My Tech Stack */}
-            <div>
-              <div className="p-8 bg-white items-center shadow-lg rounded-lg hover:shadow-2xl transition duration-300">
-                <h2 className="text-xl font-semibold  text-[#2d3748]">
-                  My Tech Stack
-                </h2>
-                <p className="text-l text-gray-700 mt-2">
-                  Technologies I’ve Been Working With Recently
-                </p>
-                <div className="flex space-x-6 mt-6">
-                  <FaBootstrap
-                    className="text-purple-600 w-8 h-12"
-                    title="Bootstrap"
-                  />
-                  <FaJs
-                    className="text-yellow-500 w-8 h-12"
-                    title="JavaScript"
-                  />
-                  <FaReact className="text-blue-500 w-8 h-12" title="React" />
+        <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-6">
+          {/* Project */}
+          <div className="flex-1 flex flex-col ">
+            <h2 className="text-2xl font-semibold text-[#2d3748] mt-0 mb-4">
+              Project
+            </h2>
+            <div className="p-0 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 flex flex-col h-full mt-1">
+              <div className="relative w-full h-80 overflow-hidden rounded-t-lg">
+                <img
+                  src="./my.jpg"
+                  alt="Agenda"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* İçerik Kısmı */}
+              <h3 className="text-xl font-semibold text-black px-3 text-left mt-2">
+                Agenda
+              </h3>
+              <p className="text-gray-500 text-left px-3 py-1">
+                Front-end developer
+              </p>
+              <div className="flex justify-start space-x-4 m-1">
+                <div className="text-sm border-2 border-gray text-black px-2 py-2 rounded-full">
+                  TypeScript
                 </div>
-                <div className="flex space-x-6 mt-4 ">
-                  <SiTailwindcss
-                    className="text-blue-400 w-8 h-12"
-                    title="Tailwind"
-                  />
-                  <SiTypescript
-                    className="text-blue-600 w-8 h-12"
-                    title="TypeScript"
-                  />
-                  <FaGithub className="text-gray-700 w-8 h-12" title="GitHub" />
+                <div className="text-xs border-2 border-gray text-black px-2 py-2 rounded-full">
+                  React-Native
+                </div>
+                <div className="text-sm  border-2 border-gray text-black px-2 py-2 rounded-full">
+                  Firebase
                 </div>
               </div>
             </div>
-            <div>
-            <h2 className="text-2xl mb-4 font-semibold text-[#2d3748]">
-              GitHub Contributions
-            </h2>
+          </div>
 
-            <p className="text-sm text-gray-500">
+          {/* My Tech Stack + GitHub Stats */}
+          <div className="flex-1 flex flex-col items-center space-y-3">
+            {/* My Tech Stack Section */}
+            <div className="p-4 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full max-w-[300px]">
+              <h2 className="text-lg font-semibold text-center text-[#2d3748]">
+                My Tech Stack
+              </h2>
+              <p className="text-xs text-center text-gray-400 mt-2">
+                Technologies I’ve Been Working With Recently
+              </p>
+              <div className="flex justify-center space-x-6 mt-6">
+                <FaBootstrap
+                  className="text-purple-600 w-7 h-8"
+                  title="Bootstrap"
+                />
+                <FaJs className="text-yellow-500 w-6 h-8" title="JavaScript" />
+                <FaReact className="text-blue-500 w-7 h-8" title="React" />
+                <FaDatabase
+                  className="text-green-500 w-6 h-8"
+                  title="MongoDB"
+                />
+              </div>
+              <div className="flex justify-center space-x-6 mt-4 mb-3">
+                <SiTailwindcss
+                  className="text-blue-400 w-7 h-8"
+                  title="Tailwind"
+                />
+                <SiTypescript
+                  className="text-blue-600 w-6 h-8"
+                  title="TypeScript"
+                />
+                <FaGithub className="text-gray-700 w-7 h-8" title="GitHub" />
+                <FaNodeJs className="text-green-600 w-6 h-8" title="Node.js" />
+              </div>
+            </div>
+
+            {/* GitHub Stats Section */}
+            <div className="bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full max-w-[300px]">
               <img
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=zrlsena"
                 alt="GitHub Stats"
+                className="w-full h-full object-cover rounded-lg"
               />
-            </p>
-          </div>
+            </div>
           </div>
         </div>
       </main>
