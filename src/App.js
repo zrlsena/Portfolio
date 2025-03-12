@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   FaBootstrap,
@@ -10,22 +10,49 @@ import {
   FaDatabase,
 } from "react-icons/fa"; // FontAwesome ikonları
 import { SiTailwindcss, SiTypescript } from "react-icons/si"; // Special ikonlar
+import SparkleEffect from "./SparkleEffect";
+import { Sun, Moon } from "lucide-react"; // Lucide ikonları kullanıyoruz
+
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+  
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+  
+  
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-gray-800 font-sans">
+    <div className={`min-h-screen ${isDarkMode ? "bg-[#200020] text-white" : "bg-[#f5f5f5] text-gray-800"} font-sans`}>
+      <SparkleEffect />
       <header
-        className="text-black py-6 shadow-md"
+        className={`py-6 shadow-md ${isDarkMode ? "bg-[#2d3748]" : "bg-[#f5f5f5]"} `}
         style={{
-          height: "120px",
-          backgroundImage: "url(./bg.png)", // Görsel yolu buraya eklenmeli
+          height: "80px",
+          backgroundImage: "url(./pg.png)", // Görsel yolu buraya eklenmeli
           backgroundSize: "repeat",
           backgroundPosition: "center",
         }}
       >
+        <button
+      onClick={() => setIsDarkMode(!isDarkMode)}
+      className={`fixed top-5 right-5 p-3 rounded-full shadow-md transition-all
+      ${isDarkMode ? " bg-yellow-400 text-white" : "bg-purple-800 text-black"}`}
+    >
+      {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+    </button>
+      
         <div
           className="max-w-7xl mx-auto flex items-center justify-between px-6"
-          style={{ marginTop: "80px" }}
+          style={{ marginTop: "30px" }}
         >
           {/* Sol Kısım */}
           <div className="text-left">
@@ -61,23 +88,31 @@ function App() {
 
           {/* Sağ Kısım */}
           <div className="flex space-x-4">
-            <button className="bg-[#f5f5f5] border-2 border-black text-black px-3 py-1 rounded-full hover:bg-[#1a202c] hover:text-white transition duration-300">
-              <a
-                href="./SenaZorlu CV.pdf"
-                download
-                className="flex items-center text-black-500 "
-              >
-                CV
-                <img
-                  src="./arrow.png"
-                  alt="Download Arrow"
-                  className="w-4 h-4 ml-2"
-                />
-              </a>
-            </button>
-            <button className="bg-[#2b6cb0] text-white px-4 py-2 rounded-full hover:bg-[#2c5282] transition duration-300">
-              e-mail
-            </button>
+          <button className="bg-[#f5f5f5] border-2 border-grey text-black px-2 py-1 rounded-full hover:bg-[#1a202c] hover:text-white transition duration-300">
+  <a
+    href="https://drive.google.com/uc?export=download&id=13rItv_pTNalExUy63I-pAVaKkfjDYLXl"
+    download
+    className="flex items-center text-black-500"
+  >
+    CV
+    <img
+      src="./arrow.png"
+      alt="Download Arrow"
+      className="w-5 h-5 ml-1"
+    />
+  </a>
+</button>
+
+<button
+  className="bg-[#e6cee9] text-black border-2 border-grey px-2 py-1 rounded-full hover:bg-[#e6cee9] hover:text-white transition duration-300"
+  style={{ backgroundColor: "#e6cee9 !important" }}
+>
+  <a href="mailto:ssenazorlu@gmail.com" className="text-black">
+    e-mail
+  </a>
+</button>
+
+
           </div>
         </div>
       </header>
@@ -90,11 +125,13 @@ function App() {
         <div className="space-y-10">
           {/* Work Experience */}
           <div>
-            <h2 className="text-2xl mb-4 font-semibold text-[#2d3748] mt-0">
+            <h2 className="text-2xl mb-4 dark:bg-gray-900 dark:text-white font-semibold  mt-0">
               Work Experience
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="p-0 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300">
+
+              <div className="p-0 bg-white shadow-lg rounded-lg ">
+                
                 {/* Resim Kısmı */}
                 <div className="relative mb-4 w-full h-40">
                   <img
@@ -122,7 +159,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="p-0 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300">
+              <div onClick={() => window.location.href = 'https://nano-wiss-senas-projects-72057643.vercel.app/'}  className="p-0 bg-white shadow-lg rounded-lg  hover:shadow-[0px_10px_30px_rgba(128,0,128,0.9)] transition duration-300">
                 <div className="relative mb-4 w-full h-40">
                   <img
                     src="./nano.png"
@@ -156,10 +193,10 @@ function App() {
         <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-6">
           {/* Project */}
           <div className="flex-1 flex flex-col ">
-            <h2 className="text-2xl font-semibold text-[#2d3748] mt-0 mb-4">
+            <h2 className="text-2xl font-semibold dark:bg-gray-900 dark:text-white mt-0 mb-4">
               Project
             </h2>
-            <div className="p-0 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 flex flex-col h-full mt-1">
+            <div className="p-0 bg-white shadow-lg rounded-lg  flex flex-col h-full mt-1">
               <div className="relative w-full h-80 overflow-hidden rounded-t-lg">
                 <img
                   src="./my.jpg"
@@ -191,7 +228,7 @@ function App() {
           {/* My Tech Stack + GitHub Stats */}
           <div className="flex-1 flex flex-col items-center space-y-3">
             {/* My Tech Stack Section */}
-            <div className="p-4 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full ">
+            <div className="p-4 bg-white shadow-lg rounded-lg  w-full ">
               <h2 className="text-lg font-semibold text-center text-[#2d3748]">
                 My Tech Stack
               </h2>
@@ -225,7 +262,7 @@ function App() {
             </div>
 
             {/* GitHub Stats Section */}
-            <div className="bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300 w-full ">
+            <div className="bg-white shadow-lg rounded-lg  w-full ">
               <img
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=zrlsena"
                 alt="GitHub Stats"
