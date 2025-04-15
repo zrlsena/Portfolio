@@ -11,8 +11,8 @@ const projects = [
       "An ongoing website for a biotechnology startup. Developed using React, Express, MongoDB, and Node.js. Designed with a focus on accessibility and user-oriented UI/UX.",
     tech: ["React", "Node.js", "MongoDB", "Express.js"],
     images: [
-        require('../assets/nano.png'),
-      "/images/biotech2.png",
+      require("../assets/nano.png"),
+      require("../assets/nano2.png"),
       "/images/biotech3.png",
     ],
     live: "https://your-live-link.com",
@@ -24,7 +24,7 @@ const projects = [
       "Worked on Shopify-to-mobile app converter using React, Polaris, and Bootstrap. Built interactive UI components and dashboards. Enhanced TypeScript and SQL skills.",
     tech: ["React", "Polaris", "Bootstrap", "TypeScript", "SQL"],
     images: [
-        require('../assets/intern.png'),
+      require("../assets/intern.png"),
       "/images/shopney2.png",
       "/images/shopney3.png",
     ],
@@ -77,10 +77,10 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-sena-dark bg-texture text-sena-light rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-8 shadow-xl transition duration-300 "
+              className=" text-sena-light rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-8  transition duration-300 "
             >
               {/* Slider */}
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-sena-light/20">
+              <div className=" overflow-hidden  border border-sena-light/20">
                 <Slider {...sliderSettings}>
                   {project.images.map((img, i) => (
                     <img
@@ -89,51 +89,75 @@ const Projects = () => {
                       alt={`${project.title} screenshot ${i + 1}`}
                       className="object-cover h-64 w-full"
                     />
+                    
                   ))}
                 </Slider>
+                
               </div>
 
               {/* Content */}
               <div className="flex flex-col justify-between">
                 <div>
-                  <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                  <p className="text-sm mb-6">{project.description}</p>
+                  <h3
+                    className="font-signature opacity-90 text-sena-sena mb-4"
+                    style={{
+                      fontFamily: "'Just Me Again Down Here', cursive",
+                      fontSize: "clamp(40px, 6vw, 48px)",
+                      fontWeight: "normal",
+                      transform: "rotate(-2deg)",
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p
+                    className="text-m font-librebaskerville leading-relaxed max-w-md text-gray-900 mb-5"
+                    style={{ letterSpacing: "1.5px", fontSize: "1rem" }}
+                  >
+                    {project.description}
+                  </p>
 
-                  <div className="flex flex-wrap gap-4 mb-6">
-                    {project.tech.map((tech, i) => (
-                      <div
-                        key={i}
-                        className="flex flex-col items-center justify-center gap-2"
+                  <div className="flex  items-start gap-6">
+                    {/* Bantlı Not Kağıdı */}
+
+                    <div className="flex gap-4 mr-6 mt-5">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=" bg-sena-sena hover:bg-sena-header text-sena-light font-medium py-2 px-6 rounded-none shadow-md hover:scale-110 inline-flex items-center gap-2 transition duration-300"
                       >
-                        <div className="p-[2px] rounded-full bg-gradient-to-br from-sena-light via-sena-sena to-sena-sena shadow-lg transform transition-all ">
-                          <div className="flex flex-col items-center justify-center bg-sena-dark rounded-full px-4 py-3 gap-2 text-center">
-                            <span className="text-sena-light opacity-80 text-sm sm:text-sm md:text-sm font-semibold">
-                              {tech}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                        Live <FaExternalLinkAlt />
+                      </a>
+                      <a
+                        href={project.more}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 border border-sena-sena text-sena-light rounded-lg text-sm font-medium inline-flex items-center gap-2 transition duration-300"
+                      >
+                        More <FaGithub />
+                      </a>
+                    </div>
 
-                <div className="flex gap-4">
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" bg-sena-sena hover:bg-sena-header text-sena-light font-medium py-2 px-6 rounded-none  shadow-md hover:scale-110 inline-flex items-center gap-2 transition duration-300"
-                  >
-                    Live <FaExternalLinkAlt />
-                  </a>
-                  <a
-                    href={project.more}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 border  border-sena-sena text-sena-light rounded-lg text-sm font-medium inline-flex items-center gap-2 transition duration-300"
-                  >
-                    More <FaGithub />
-                  </a>
+                    <div
+                      className={`relative rotate-[5deg]`}
+                      style={{
+                        width: `${Math.max(120, project.tech.length * 35)}px`, // Dinamik genişlik
+                      }}
+                    >
+                      {/* Bantlar */}
+                      <div className="absolute top-0 bg-yellow-200 left-[-12px] w-16 h-6 bg-sena-yellow rotate-[-12deg] shadow-md opacity-80 z-10"></div>
+                      <div className="absolute top-0 bg-yellow-200 right-[-12px] w-16 h-6 bg-sena-yellow rotate-[12deg] shadow-md opacity-80 z-10"></div>
+
+                      {/* Kağıt */}
+                      <div className="bg-white text-sena-sena font-signature p-4 pt-6 shadow-md">
+                        <ul className="text-xl font-medium space-y-1 text-center">
+                          {project.tech.map((tech, i) => (
+                            <li key={i}>{tech}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
