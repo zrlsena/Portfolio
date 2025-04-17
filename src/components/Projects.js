@@ -8,9 +8,9 @@ const projects = [
   {
     title: "Biotechnology Company Website",
     description:
-      "An ongoing website for a biotechnology startup. Developed using React, Express, MongoDB, and Node.js. Designed with a focus on accessibility and user-oriented UI/UX.",
-    tech: ["React", "Node.js", "MongoDB", "Express.js"],
-    images: [
+      "A comprehensive and visually striking corporate website built from scratch for a biotechnology startup. Designed and developed entirely by me using React and Bootstrap. Focused on clean UI/UX, responsive layout, and professional branding tailored to a modern tech-driven audience.",
+      tech: ["React", "Bootstrap", "JavaScript", "Responsive Design", "UI/UX"],
+      images: [
       require("../assets/nano.png"),
       require("../assets/nano2.png"),
       require("../assets/nano3.png"),
@@ -21,9 +21,9 @@ const projects = [
   {
     title: "Shopney Front-End Internship",
     description:
-      "Worked on Shopify-to-mobile app converter using React, Polaris, and Bootstrap. Built interactive UI components and dashboards. Enhanced TypeScript and SQL skills.",
-    tech: ["React", "Polaris", "Bootstrap", "TypeScript", "SQL"],
-    images: [
+      "Contributed to the front-end development of a Shopify-to-mobile app converter as part of a team. Translated complex Figma designs into responsive and dynamic UI components using React and Bootstrap. Integrated the given backend seamlessly, focusing on user flow and pixel-perfect implementation.",
+      tech: ["React", "Bootstrap", "JavaScript", "Figma to Code", "Team Collaboration"],
+      images: [
       require("../assets/intern.png"),
       require("../assets/intern2.png"),
       require("../assets/intern3.png"),
@@ -33,9 +33,9 @@ const projects = [
   {
     title: "Art E-Commerce Website",
     description:
-      "Minimalist e-commerce site for artwork lovers. Built with React and Firebase, includes responsive design and real-time cart functions.",
-    tech: ["React", "Firebase", "Redux", "SCSS"],
-    images: [
+      "A fully functional e-commerce platform crafted end-to-end for art enthusiasts. Built with modern technologies including React, Node.js, MongoDB, and Vite. Features dynamic product display, real-time cart, secure routing, and a responsive UI — all designed and developed by me with a minimalist aesthetic.",
+      tech: ["React", "Node.js", "MongoDB", "Bootstrap", "Vite", "Full-Stack"],
+      images: [
       require("../assets/art1.png"),
       require("../assets/art2.png"),
       require("../assets/art3.png"),
@@ -89,7 +89,7 @@ const Projects = () => {
                       key={i}
                       src={img}
                       alt={`${project.title} screenshot ${i + 1}`}
-                      className="object-cover h-64 w-full filter opacity-65"
+                      className="object-cover h-auto w-full filter opacity-65"
                     />
                   ))}
                 </Slider>
