@@ -59,9 +59,10 @@ const sliderSettings = {
 const Projects = () => {
   return (
     <section
-      id="projects"
-      className="min-h-screen flex flex-col justify-center items-center bg-flat bg-sena-flat text-sena-textDark relative overflow-hidden px-4 py-16"
-    >
+  id="projects"
+  className="min-h-screen flex flex-col justify-center items-center bg-flat bg-sena-flat text-sena-textDark relative overflow-hidden px-4 sm:px-6 py-16"
+>
+
       {/* Title */}
       <div className="absolute top-6 w-full text-center">
         <h2
@@ -76,9 +77,10 @@ const Projects = () => {
         <div className="space-y-10 mt-20 ">
           {projects.map((project, index) => (
             <div
-              key={index}
-              className=" text-sena-light rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-20  transition duration-300 "
-            >
+            key={index}
+            className="w-full max-w-screen-lg mx-auto text-sena-light rounded-3xl px-4 sm:px-6 py-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 transition duration-300"
+          >
+          
               {/* Slider */}
               <div className=" overflow-hidden border border-none w-full max-w-full ">
                 <Slider {...sliderSettings}>
