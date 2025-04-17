@@ -17,8 +17,8 @@ export default function Header() {
 
   useEffect(() => {
     if (isVisible) {
-      setTimeout(() => setFirstLineDone(true), 3500);
-      setTimeout(() => setSecondLineDone(true), 7000);
+      setTimeout(() => setFirstLineDone(true), 0);
+      setTimeout(() => setSecondLineDone(true), 3500);
     }
   }, [isVisible]);
 
@@ -67,7 +67,7 @@ export default function Header() {
           }`}
         >
           <span
-            className={`typing-effect ${
+            className={` firstLetter typing-effect ${
               firstLineDone ? "typing-effect-show" : "hidden"
             }`}
           >

@@ -33,7 +33,7 @@ export default function About() {
             <div className="mb-5 mt-20">
               <img src={ProfileIcon} alt="Profile Icon" className="w-28 h-28 object-contain mx-auto" style={{ filter: "drop-shadow(1px 1px 2px rgba(153,27,27,3))",imageRendering: "auto" }}/>
             </div>
-            <p className="text-m font-librebaskerville leading-relaxed max-w-sm text-gray-900" style={{ letterSpacing: "1.5px", fontSize: "1rem" }}>
+            <p className="text-m font-librebaskerville leading-relaxed max-w-sm text-gray-900 firstLetter" style={{ letterSpacing: "1.5px", fontSize: "1rem" }}>
               I'm a full-stack developer with a deep passion for JavaScript,
               React, and creative web technologies. I thrive on building elegant
               solutions and exploring new tech every day. When I'm not coding, 

@@ -20,7 +20,8 @@ module.exports = {
       },
       backgroundImage: {
         'texture': "url('/src/assets/large-leather.png')",  // Texture'ı burada tanımlıyoruz
-        'flat': "url('https://www.transparenttextures.com/patterns/cardboard-flat.png')",
+        'flat': "url('/src/assets/flat.png')",
+        'paper':"url('/src/assets/paper.png')",
       }
     },
   },

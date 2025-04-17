@@ -13,10 +13,10 @@ const projects = [
     images: [
       require("../assets/nano.png"),
       require("../assets/nano2.png"),
-      "/images/biotech3.png",
+      require("../assets/nano3.png"),
     ],
-    live: "https://your-live-link.com",
-    more: "https://github.com/your-repo-link",
+    live: "https://nano-wiss.vercel.app",
+    more: "https://github.com/zrlsena/NanoWiss",
   },
   {
     title: "Shopney Front-End Internship",
@@ -25,11 +25,10 @@ const projects = [
     tech: ["React", "Polaris", "Bootstrap", "TypeScript", "SQL"],
     images: [
       require("../assets/intern.png"),
-      "/images/shopney2.png",
-      "/images/shopney3.png",
+      require("../assets/intern2.png"),
+      require("../assets/intern3.png"),
     ],
-    live: "https://shopney.io",
-    more: "https://linkedin.com/in/senazorlu",
+    more: "https://github.com/zrlsena/EticPlus",
   },
   {
     title: "Art E-Commerce Website",
@@ -37,21 +36,24 @@ const projects = [
       "Minimalist e-commerce site for artwork lovers. Built with React and Firebase, includes responsive design and real-time cart functions.",
     tech: ["React", "Firebase", "Redux", "SCSS"],
     images: [
-      "/images/artecom1.png",
-      "/images/artecom2.png",
-      "/images/artecom3.png",
+      require("../assets/art1.png"),
+      require("../assets/art2.png"),
+      require("../assets/art3.png"),
     ],
-    live: "https://art-ecommerce.vercel.app",
-    more: "https://github.com/senazorlu/art-ecommerce",
+    more: "https://github.com/zrlsena/E-commerce",
   },
 ];
 
 const sliderSettings = {
   infinite: true,
-  speed: 700,
+  speed: 3000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: true,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnHover: true,
+  dots: true,
 };
 
 const Projects = () => {
@@ -60,10 +62,8 @@ const Projects = () => {
       id="projects"
       className="min-h-screen flex flex-col justify-center items-center bg-flat bg-sena-flat text-sena-textDark relative overflow-hidden px-4 py-16"
     >
-      <div className="absolute top-1 transform -translate-x-14 w-80 h-20 bg-sena-highlight opacity-25 z-10  "></div>
-      <div className="absolute inset-0 z-0 "></div>
       {/* Title */}
-      <div className="absolute top-0 w-full text-center">
+      <div className="absolute top-6 w-full text-center">
         <h2
           className="text-5xl text-black font-playfair block"
           style={{ letterSpacing: "3px" }}
@@ -73,45 +73,38 @@ const Projects = () => {
       </div>
 
       <div className="max-w-7xl mx-auto ">
-        <div className="space-y-20 mt-56 ">
+        <div className="space-y-10 mt-20 ">
           {projects.map((project, index) => (
             <div
               key={index}
-              className=" text-sena-light rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-8  transition duration-300 "
+              className=" text-sena-light rounded-3xl p-6 md:p-10 grid md:grid-cols-2 gap-20  transition duration-300 "
             >
               {/* Slider */}
-              <div className=" overflow-hidden  border border-sena-light/20">
+              <div className=" overflow-hidden border border-none w-full max-w-full ">
                 <Slider {...sliderSettings}>
                   {project.images.map((img, i) => (
                     <img
                       key={i}
                       src={img}
                       alt={`${project.title} screenshot ${i + 1}`}
-                      className="object-cover h-64 w-full"
+                      className="object-cover h-64 w-full filter opacity-65"
                     />
-                    
                   ))}
                 </Slider>
-                
               </div>
 
               {/* Content */}
-              <div className="flex flex-col justify-between">
+              <div className="flex flex-col justify-between ">
                 <div>
                   <h3
-                    className="font-signature opacity-90 text-sena-sena mb-4"
-                    style={{
-                      fontFamily: "'Just Me Again Down Here', cursive",
-                      fontSize: "clamp(40px, 6vw, 48px)",
-                      fontWeight: "normal",
-                      transform: "rotate(-2deg)",
-                    }}
+                    className="text-2xl text-gray-700 font-playfair block mb-2 font-bold"
+                    style={{ letterSpacing: "3px" }}
                   >
                     {project.title}
                   </h3>
                   <p
-                    className="text-m font-librebaskerville leading-relaxed max-w-md text-gray-900 mb-5"
-                    style={{ letterSpacing: "1.5px", fontSize: "1rem" }}
+                    className="text-m font-librebaskerville leading-relaxed max-w-md text-gray-600 firstLetter mb-5"
+                    style={{ letterSpacing: "1.2px", fontSize: "1rem" }}
                   >
                     {project.description}
                   </p>
@@ -120,36 +113,41 @@ const Projects = () => {
                     {/* Bantlı Not Kağıdı */}
 
                     <div className="flex gap-4 mr-6 mt-5">
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className=" bg-sena-sena hover:bg-sena-header text-sena-light font-medium py-2 px-6 rounded-none shadow-md hover:scale-110 inline-flex items-center gap-2 transition duration-300"
-                      >
-                        Live <FaExternalLinkAlt />
-                      </a>
-                      <a
-                        href={project.more}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 border border-sena-sena text-sena-light rounded-lg text-sm font-medium inline-flex items-center gap-2 transition duration-300"
-                      >
-                        More <FaGithub />
-                      </a>
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-sena-sena hover:bg-sena-header text-sena-light font-medium py-2 px-6 rounded-none shadow-md hover:scale-110 inline-flex items-center gap-2 transition duration-300"
+                        >
+                          Live <FaExternalLinkAlt />
+                        </a>
+                      )}
+
+                      {project.more && (
+                        <a
+                          href={project.more}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 border border-sena-sena text-sena-sena rounded-lg text-sm font-medium inline-flex items-center gap-2 transition duration-300"
+                        >
+                          More <FaGithub />
+                        </a>
+                      )}
                     </div>
 
                     <div
-                      className={`relative rotate-[5deg]`}
+                      className={`relative rotate-[5deg] mt-5 ml-auto w-[160px] min-w-[140px]`}
                       style={{
                         width: `${Math.max(120, project.tech.length * 35)}px`, // Dinamik genişlik
                       }}
                     >
                       {/* Bantlar */}
-                      <div className="absolute top-0 bg-yellow-200 left-[-12px] w-16 h-6 bg-sena-yellow rotate-[-12deg] shadow-md opacity-80 z-10"></div>
-                      <div className="absolute top-0 bg-yellow-200 right-[-12px] w-16 h-6 bg-sena-yellow rotate-[12deg] shadow-md opacity-80 z-10"></div>
+                      <div className="absolute top-[-8px] left-[-12px] w-12 h-4 bg-gray-400 rotate-[-10deg] opacity-30 shadow-md  z-10"></div>
+                      <div className="absolute top-[-8px] bg-gray-400 right-[-12px] w-12 h-4 bg-sena-yellow rotate-[12deg] shadow-md opacity-30 z-10"></div>
 
                       {/* Kağıt */}
-                      <div className="bg-white text-sena-sena font-signature p-4 pt-6 shadow-md">
+                      <div className="bg-white text-sena-sena font-signature p-4 pt-3 shadow-md">
                         <ul className="text-xl font-medium space-y-1 text-center">
                           {project.tech.map((tech, i) => (
                             <li key={i}>{tech}</li>

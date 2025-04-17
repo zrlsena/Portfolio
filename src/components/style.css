@@ -101,3 +101,6 @@ body {
 background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
 }
 
+.firstLetter::first-letter {
+  font-size: 1.5rem;
+}

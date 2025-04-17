@@ -277,3 +277,82 @@ function Old() {
 }
 
 export default Old;
+/*
+bunu projects e uygula!!!!!!!!!!!
+
+
+import React, { useState } from "react";
+
+const projects = [
+  {
+    title: "Biotechnology Company Website",
+    images: [
+      "https://private-user-images.githubusercontent.com/96860750/392361396-ee832064-977b-41da-827a-5d5ea7687299.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ3NTc0MzQsIm5iZiI6MTc0NDc1NzEzNCwicGF0aCI6Ii85Njg2MDc1MC8zOTIzNjEzOTYtZWU4MzIwNjQtOTc3Yi00MWRhLTgyN2EtNWQ1ZWE3Njg3Mjk5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDE1VDIyNDUzNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNjMjQ5ZWIxNTQxZjk1NmE5YzRlMTlmMTgzNGNkZGFiYjlhZjkxZTc4OWQ0OTdkYTE3NTZjNzRiMmIzMThjNGUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.YO8mDXy_IMJeO9cW2zAIBTnpE0Rk4YRV0iA3jiXLOrg",
+      "https://via.placeholder.com/300x200?text=Image+2",
+      "https://via.placeholder.com/300x200?text=Image+3",
+    ],
+  },
+  {
+    title: "Shopney Front-End Internship",
+    images: [
+      "https://via.placeholder.com/300x200?text=Image+A",
+      "https://via.placeholder.com/300x200?text=Image+B",
+      "https://via.placeholder.com/300x200?text=Image+C",
+    ],
+  },
+];
+
+const Projects = () => {
+  // Her proje için aktif resim index'ini ayrı ayrı tutalım
+  const [activeImageIndexes, setActiveImageIndexes] = useState(
+    projects.map(() => 0) // Başlangıçta her proje için aktif index 0 olsun
+  );
+
+  const handleImageClick = (projectIndex, index) => {
+    const newActiveImageIndexes = [...activeImageIndexes];
+    newActiveImageIndexes[projectIndex] = index;
+    setActiveImageIndexes(newActiveImageIndexes);
+  };
+
+  return (
+    <div className="projects-container">
+      {projects.map((project, projectIndex) => (
+        <div key={projectIndex} className="project">
+          <h2>{project.title}</h2>
+
+          {/* Büyük Resim *//*}
+          <div className="large-image">
+            <img
+              src={project.images[activeImageIndexes[projectIndex]]}
+              alt="Active project"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
+
+          {/* Küçük Resimler *//*}
+          <div className="small-images">
+            {project.images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Thumbnail ${index}`}
+                onClick={() => handleImageClick(projectIndex, index)}
+                style={{
+                  width: "80px",
+                  height: "auto",
+                  marginRight: "10px",
+                  cursor: "pointer",
+                  border: activeImageIndexes[projectIndex] === index ? "2px solid #000" : "none",
+                  transition: "0.3s",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Projects;
+*/
