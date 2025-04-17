@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col justify-center items-center bg-flat bg-sena-flat text-sena-textDark relative overflow-hidden px-4 py-24"
+      className=" flex flex-col justify-center items-center bg-flat bg-sena-flat text-sena-textDark relative overflow-hidden px-4 py-24"
     >
       {/* Sayfa başlığı */}
       <div className="absolute top-10 w-full text-center">
@@ -18,7 +18,7 @@ export default function Contact() {
       </div>
 
       {/* Not kağıdı */}
-      <div className="relative bg-paper bg-white shadow-xl px-6 py-8 sm:px-10 sm:py-10 max-w-xs sm:max-w-md md:max-w-lg w-full z-10 rotate-[-0.5deg] sm:rotate-[-1.5deg] mt-2 mx-4 sm:mx-auto">
+      <div className="relative bg-paper bg-white shadow-xl px-6 py-8 sm:px-10 sm:py-10 max-w-xs sm:max-w-md md:max-w-lg w-full z-10 rotate-[-0.5deg] sm:rotate-[-1.5deg] my-20 mx-4 sm:mx-auto">
         {/* Bantlar */}
         <div className="absolute top-[-12px] left-[-12px] w-16 h-5 sm:w-20 sm:h-6 bg-gray-400 rotate-[-8deg] opacity-30 shadow-md z-20"></div>
         <div className="absolute top-[-12px] right-[-12px] w-16 h-5 sm:w-20 sm:h-6 bg-gray-400 rotate-[8deg] opacity-30 shadow-md z-20"></div>
