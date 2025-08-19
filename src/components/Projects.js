@@ -103,7 +103,7 @@ const Projects = () => {
                       key={i}
                       src={img}
                       alt={`${project.title} screenshot ${i + 1}`}
-                      className="object-cover h-auto w-full filter opacity-65"
+                      className="object-cover h-auto w-full filter opacity-80"
                     />
                   ))}
                 </Slider>
