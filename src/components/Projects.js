@@ -6,17 +6,18 @@ import "slick-carousel/slick/slick-theme.css";
 
 const projects = [
   {
-    title: "Biotechnology Company Website",
+    title: "Admin Dashbooard Panel Website",
     description:
-      "A comprehensive and visually striking corporate website built from scratch for a biotechnology startup. Designed and developed entirely by me using React and Bootstrap. Focused on clean UI/UX, responsive layout, and professional branding tailored to a modern tech-driven audience.",
-      tech: ["React", "Bootstrap", "JavaScript", "Responsive Design", "UI/UX"],
+      "Redesigned and developed the admin dashboard using Vue.js & Tailwind. Implemented state management with Pinia, integrated frontend with backend APIs, and ensured a responsive, modern user experience.",
+      tech: ["Vue.js", "Tailwind CSS", "TypeScript", "Responsive Design", "UI/UX"],
       images: [
-      require("../assets/nano.png"),
-      require("../assets/nano2.png"),
-      require("../assets/nano3.png"),
+      require("../assets/dashboard.png"),
+      require("../assets/secondstatic.png"),
+      require("../assets/performance.png"),
+            require("../assets/passwors.png"),
+
     ],
-    live: "https://nano-wiss.vercel.app",
-    more: "https://github.com/zrlsena/NanoWiss",
+    
   },
   {
     title: "Biotechnology Company Website",
