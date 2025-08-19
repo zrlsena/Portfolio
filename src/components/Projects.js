@@ -19,6 +19,19 @@ const projects = [
     more: "https://github.com/zrlsena/NanoWiss",
   },
   {
+    title: "Biotechnology Company Website",
+    description:
+      "A comprehensive and visually striking corporate website built from scratch for a biotechnology startup. Designed and developed entirely by me using React and Bootstrap. Focused on clean UI/UX, responsive layout, and professional branding tailored to a modern tech-driven audience.",
+      tech: ["React", "Bootstrap", "JavaScript", "Responsive Design", "UI/UX"],
+      images: [
+      require("../assets/nano.png"),
+      require("../assets/nano2.png"),
+      require("../assets/nano3.png"),
+    ],
+    live: "https://nano-wiss.vercel.app",
+    more: "https://github.com/zrlsena/NanoWiss",
+  },
+  {
     title: "Shopney Front-End Internship",
     description:
       "Contributed to the front-end development of a Shopify-to-mobile app converter as part of a team. Translated complex Figma designs into responsive and dynamic UI components using React and Bootstrap. Integrated the given backend seamlessly, focusing on user flow and pixel-perfect implementation.",
