@@ -14,7 +14,7 @@ const projects = [
       require("../assets/dashboard.png"),
       require("../assets/secondstatic.png"),
       require("../assets/performance.png"),
-            require("../assets/passwors.png"),
+      require("../assets/passwors.png"),
 
     ],
     
