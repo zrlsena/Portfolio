@@ -13,7 +13,7 @@ const projects = [
       images: [
       require("../assets/dashboard.png"),
       require("../assets/secondstatic.png"),
-      require("../assets/performance.png"),
+      require("../assets/performancemonitor.png"),
       require("../assets/passwors.png"),
 
     ],
