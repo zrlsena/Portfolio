@@ -20,7 +20,7 @@ module.exports = {
       },
       backgroundImage: {
         'texture': "url('/src/assets/large-leather.png')",  // Texture'ı burada tanımlıyoruz
-        'flat': "url('/src/assets/flat.png')",
+  'flat': "linear-gradient(rgba(255, 255, 255, 0.3), rgba(255,255,255,0.3)), url('/src/assets/flat.png')",
         'paper':"url('/src/assets/paper.png')",
       }
     },
