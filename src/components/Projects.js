@@ -98,11 +98,11 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="space-y-10 mt-20">
           {projects.map((project, index) => (
-            <div key={index} className="w-full max-w-screen-lg mx-auto text-sena-light rounded-3xl px-4 sm:px-6 py-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 transition duration-300" >
+            <div key={index} className="w-full  max-w-screen-lg mx-auto text-sena-light rounded-3xl px-4 sm:px-6 py-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 transition duration-300" >
               {/* Grid with framed images */}
               {/* Divider line */}
 
-              <div className="grid grid-cols-2 gap-6 cursor-pointer items-center justify-items-center" onClick={() => setSelectedProject(project)} >
+              <div className="grid grid-cols-2 mt-16 gap-6 cursor-pointer items-center justify-items-center" onClick={() => setSelectedProject(project)} >
                 {/* Desktop Frame */}
                 <div className="relative w-[400px] max-w-[400px] z-0">
                   <div className="border-4 border-gray-800 rounded-xl shadow-lg w-full h-[200px] overflow-hidden flex items-center justify-center bg-white">
@@ -168,7 +168,7 @@ const Projects = () => {
 
                     {/* Tech list */}
                     <div
-                      className={`relative rotate-[5deg] mt-5 ml-auto w-[160px] min-w-[140px]`}
+                      className={`relative rotate-[5deg] mt-5 ml-auto w-[160px] min-w-[140px] mb-6 `}
                       style={{
                         width: `${Math.max(120, project.tech.length * 35)}px`,
                       }}
@@ -194,10 +194,10 @@ const Projects = () => {
       {/* Modal with slider */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl p-6 w-11/12 max-w-4xl relative">
+          <div className=" items-center rounded-2xl p-6 w-11/12 max-w-4xl relative">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-black text-xl font-bold"
+              className="absolute top-0 mb-2 right-0 text-white text-xl font-bolder"
             >
               ✕
             </button>
