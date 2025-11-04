@@ -102,9 +102,14 @@ const Projects = () => {
               {/* Grid with framed images */}
               {/* Divider line */}
 
-              <div className="grid grid-cols-2 mt-16 gap-6 cursor-pointer items-center justify-items-center" onClick={() => setSelectedProject(project)} >
+              <div className="grid grid-cols-2 mt-16 gap-6 cursor-pointer items-center justify-center" onClick={() => setSelectedProject(project)} >
                 {/* Desktop Frame */}
-                <div className="relative w-[400px] max-w-[400px] z-0">
+<div
+  className="relative z-0 mx-auto"
+  style={{
+    width: "clamp(220px, 45vw, 400px)", // ekran boyutuna göre küçülür
+  }}
+>
                   <div className="border-4 border-gray-800 rounded-xl shadow-lg w-full h-[200px] overflow-hidden flex items-center justify-center bg-white">
                     <img
                       src={project.images[0]}
@@ -112,7 +117,9 @@ const Projects = () => {
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <div className="absolute -bottom-2 left-0 w-[400px] h-2 bg-gray-600 rounded-b-xl"></div>
+                  <div className="absolute -bottom-2 left-0  h-2 bg-gray-600 rounded-b-xl"style={{
+    width: "clamp(220px, 45vw, 400px)", // ekran boyutuna göre küçülür
+  }}></div>
                 </div>
 
                 {/* Mobile Frame (önde) */}
