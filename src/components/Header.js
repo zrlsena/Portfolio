@@ -3,16 +3,12 @@ import "./style.css";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
   const [firstLineDone, setFirstLineDone] = useState(false);
   const [secondLineDone, setSecondLineDone] = useState(false);
 
-  const handleScroll = () => setScrollY(window.scrollY);
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 500);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {

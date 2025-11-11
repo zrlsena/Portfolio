@@ -17,7 +17,7 @@ const projects = [
       require("../assets/modal2.png"),
       require("../assets/modal4.png"),
     ],
-    live: "https://modal-trans.webflow.io/#",
+    live: "https://app.modaltrans.com/login",
   },
   {
     title: "Admin Dashboard Panel Website",
@@ -47,7 +47,7 @@ const projects = [
 
       require("../assets/nano3.png"),
     ],
-    more: "https://github.com/zrlsena/NanoWiss",
+    live: "https://nano-wiss.vercel.app/",
   },
   {
     title: "Shopney Front-End Internship",
